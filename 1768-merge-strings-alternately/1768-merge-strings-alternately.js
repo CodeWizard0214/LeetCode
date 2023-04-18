@@ -4,25 +4,11 @@
  * @return {string}
  */
 var mergeAlternately = function(word1, word2) {
-    let res = [];
-    let  = 0 ;
-    if(word1.length < word1.length){
-        for(i = 0 ; i< word1.length ; i++){
-            res.push(word1[i]);
-            res.push(word2[i]);
-        }
-        for(i = word1.length; i < word2.length; i++){
-            res.push(word2[i]);
-        }
-    }
-    else{
-        for(i = 0 ; i< word2.length ; i++){
-            res.push(word1[i]);
-            res.push(word2[i]);
-        }
-        for(i = word2.length; i < word1.length; i++){
-            res.push(word1[i]);
-        }
-    }
-    return res.join("");
+    let result = '';
+  let i = 0, j = 0;
+  while (i < word1.length && j < word2.length) {
+    result += word1[i++];
+    result += word2[j++];
+  }
+  return result + word1.slice(i) + word2.slice(j);
 };
